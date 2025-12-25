@@ -73,7 +73,7 @@ export default function Page() {
           </Reveal>
 
           <Reveal delay={100}>
-            <p className="small text-cyan-300/80">603evo • Specialized Training</p>
+            <p className="small text-cyan-300/80">Lax 603 Evo • Specialized Training</p>
           </Reveal>
 
           <Reveal delay={150}>
