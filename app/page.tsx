@@ -1,8 +1,13 @@
-
 import Link from "next/link";
 import Image from "next/image";
 import Reveal from "./components/Reveal";
 import SeoJsonLd from "./components/SeoJsonLd";
+
+const ACUITY_URL =
+  "https://app.acuityscheduling.com/schedule/c5d9ab33?utm_source=ig&utm_medium=social&utm_content=link_in_bio&fbclid=PAZXh0bgNhZW0CMTEAc3J0YwZhcHBfaWQMMjU2MjgxMDQwNTU4AAGnz_feF0WRCcArm0iZ2mtC2Mv0Ld1Ic-QSLxSEjII6Xv2kUhHh01hyK9jPa9I_aem_V7q-xCsdnliTWIEIKoGjcA";
+
+const IG_URL =
+  "https://www.instagram.com/603evo?igsh=ZmZ3OG9rYTI5dWxy&utm_source=ig&utm_medium=social&utm_content=link_in_bio&fbclid=PAZXh0bgNhZW0CMTEAc3J0YwZhcHBfaWQMMjU2MjgxMDQwNTU4AAGnt6L-UCop9sP0cKMAoxXohB6rx_2iCqvHWFURWMKhHP9wjcwPgWvT1TMj59U_aem_v15ixo1f6sGUk6fapIbyXQ";
 
 export default function Page() {
   return (
@@ -26,26 +31,41 @@ export default function Page() {
           </a>
 
           <div className="hidden md:flex items-center gap-6 text-sm">
-            <a href="#top" className="hover:text-cyan-300">
-              Home
-            </a>
-            <a href="#highlights" className="hover:text-cyan-300">
-              Highlights
-            </a>
-            <a href="#roadmap" className="hover:text-cyan-300">
-              Roadmap
-            </a>
-            <a href="#packages" className="hover:text-cyan-300">
-              Packages
-            </a>
-            <a href="#sessions" className="hover:text-cyan-300">
-              Sessions
-            </a>
-            <a href="#faq" className="hover:text-cyan-300">
-              FAQ
-            </a>
+            <a href="#top" className="hover:text-cyan-300">Home</a>
+            <a href="#highlights" className="hover:text-cyan-300">Highlights</a>
+            <a href="#roadmap" className="hover:text-cyan-300">Roadmap</a>
+            <a href="#packages" className="hover:text-cyan-300">Packages</a>
+            <a href="#sessions" className="hover:text-cyan-300">Sessions</a>
+
+            <Link href="/training" className="hover:text-cyan-300">
+              Training
+            </Link>
+
             <a
-              href="#contact"
+              href={ACUITY_URL}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="hover:text-cyan-300"
+            >
+              Scheduling
+            </a>
+
+            <a
+              href={IG_URL}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="hover:text-cyan-300"
+            >
+              Instagram
+            </a>
+
+            <a href="#faq" className="hover:text-cyan-300">FAQ</a>
+
+            {/* Apply = Purchase/Book */}
+            <a
+              href={ACUITY_URL}
+              target="_blank"
+              rel="noopener noreferrer"
               className="px-3 py-1.5 rounded-lg bg-cyan-500 text-slate-950 font-semibold hover:brightness-110"
             >
               Apply
@@ -85,16 +105,20 @@ export default function Page() {
 
           <Reveal delay={200}>
             <p className="mt-5 max-w-2xl text-slate-300">
-              Stop wishing. Start working. Transform into a complete lacrosse
-              player with specialized, small-group training led by regionally
-              renowned coach <span className="font-semibold">Gerry Holly</span>.
+              Stop wishing. Start working. Transform into a complete lacrosse player with specialized,
+              small-group training led by <span className="font-semibold">Coach Gerry Holly</span>.
             </p>
           </Reveal>
 
           <Reveal delay={250}>
             <div className="mt-8 flex flex-col sm:flex-row gap-3">
-              <a href="#contact" className="btn btn-primary text-center">
-                Apply for December–March Sessions
+              <a
+                href={ACUITY_URL}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="btn btn-primary text-center"
+              >
+                Book / Purchase Sessions
               </a>
               <a href="#highlights" className="btn btn-ghost text-center">
                 See Program Highlights
@@ -143,9 +167,7 @@ export default function Page() {
 
             <div className="mt-8 flex flex-wrap gap-3">
               <span className="pill">Middle School Males — Personalized Coaching</span>
-              <span className="pill">
-                High School Males (Freshman–Senior) — Elite Group Training
-              </span>
+              <span className="pill">High School Males (Freshman–Senior) — Elite Group Training</span>
             </div>
           </div>
 
@@ -210,7 +232,13 @@ export default function Page() {
                 <div className="mt-2 text-sm text-slate-300">• {line1}</div>
                 <div className="text-sm text-slate-300">• {line2}</div>
                 <div className="mt-4 text-3xl font-extrabold">${price}</div>
-                <a href="#contact" className="mt-4 inline-block btn btn-primary">
+
+                <a
+                  href={ACUITY_URL}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="mt-4 inline-block btn btn-primary"
+                >
                   Apply
                 </a>
               </div>
@@ -240,15 +268,44 @@ export default function Page() {
           <Reveal delay={120}>
             <div>
               <h2 className="text-2xl md:text-3xl font-bold">About Coach Gerry Holly</h2>
+
+              <div className="mt-2 text-sm text-cyan-300 font-semibold tracking-wide">
+                23 Seasons • 319 Wins • 4 State Championship Appearances • Former UNH D1 Player
+              </div>
+
               <p className="mt-4 text-slate-300">
-                Regionally renowned lacrosse veteran with a track record of building confident,
-                explosive athletes. Sessions emphasize perfect fundamentals, game-ready conditioning,
-                and decision-making IQ.
+                <span className="font-semibold">Coach Gerry Holly</span> is the all-time winningest coach
+                in Exeter High School history, leading the Blue Hawks lacrosse program for 23 seasons
+                (1999–2023). During his tenure, he compiled{" "}
+                <span className="font-semibold">319 career wins</span> and guided the program to{" "}
+                <span className="font-semibold">four state championship appearances</span>, including
+                title-game runs in both Division II and Division I following Exeter’s transition between
+                classifications.
               </p>
+
+              <p className="mt-4 text-slate-300">
+                A former{" "}
+                <span className="font-semibold">University of New Hampshire Division I player (1992–1996)</span>,
+                Coach Holly brings a college-level tactical approach and professional standards to every
+                session. His training emphasizes perfect fundamentals, game-speed execution, and
+                decision-making under pressure.
+              </p>
+
+              <p className="mt-4 text-slate-300">
+                Beyond wins and titles, he’s known for developing confident, disciplined athletes and building
+                a culture of accountability. His passion for the game has always been personal—highlighted by
+                the years he spent coaching his own children at the high school level.
+              </p>
+
               <div className="mt-6 flex flex-wrap gap-3">
-                <span className="pill">Elite coaching</span>
-                <span className="pill">Positive culture</span>
-                <span className="pill">Outcome-driven</span>
+                <span className="pill">23-season legacy</span>
+                <span className="pill">College-level standards</span>
+                <span className="pill">Player development</span>
+                <span className="pill">Accountability culture</span>
+              </div>
+
+              <div className="mt-6 text-sm text-slate-400">
+                — <span className="text-slate-300 font-semibold">Director, Gerry Holly</span>
               </div>
             </div>
           </Reveal>
@@ -260,12 +317,8 @@ export default function Page() {
         <div className="rounded-3xl glass p-6 md:p-10">
           <div className="grid md:grid-cols-2 gap-8">
             <div>
-              <h3 className="text-xl md:text-2xl font-bold">
-                Monthly Sessions • December — March
-              </h3>
-              <p className="mt-2 text-slate-300">
-                38 Hampton Rd, Exeter, NH 03833 (off 101 via 95)
-              </p>
+              <h3 className="text-xl md:text-2xl font-bold">Monthly Sessions • December — March</h3>
+              <p className="mt-2 text-slate-300">38 Hampton Rd, Exeter, NH 03833 (off 101 via 95)</p>
               <ul className="mt-4 space-y-2 text-slate-300 text-sm">
                 <li>• Convenient indoor facility for winter training</li>
                 <li>• Small groups organized by age & level</li>
@@ -275,12 +328,16 @@ export default function Page() {
 
             <div className="rounded-2xl bg-slate-900/60 border border-white/10 p-6">
               <p className="text-sm text-slate-400">Ready to raise your game?</p>
+
               <a
-                href="#contact"
+                href={ACUITY_URL}
+                target="_blank"
+                rel="noopener noreferrer"
                 className="mt-3 inline-block px-5 py-3 rounded-xl bg-cyan-500 text-slate-950 font-semibold hover:brightness-110"
               >
-                Apply for a Spot
+                Book Sessions
               </a>
+
               <p className="mt-4 text-xs text-slate-500">
                 Limited capacity. Acceptance prioritized for commitment and fit.
               </p>
@@ -296,9 +353,7 @@ export default function Page() {
       >
         <div className="mx-auto max-w-6xl px-4">
           <h2 className="text-2xl md:text-3xl font-bold">Gallery</h2>
-          <p className="text-slate-400 mt-2 text-sm">
-            Action and promo visuals. Add more photos anytime.
-          </p>
+          <p className="text-slate-400 mt-2 text-sm">Action and promo visuals. Add more photos anytime.</p>
 
           <div className="mt-6 grid grid-cols-2 md:grid-cols-3 gap-4">
             {["/flyer.png", "/logo_white_128.png", "/logo_white_64.png"].map((src, i) => (
@@ -356,8 +411,10 @@ export default function Page() {
       <section id="contact" className="mx-auto max-w-6xl px-4 pb-20">
         <div className="grid md:grid-cols-2 gap-10">
           <div>
-            <h2 className="text-2xl md:text-3xl font-bold">Apply / Contact</h2>
-            <p className="mt-3 text-slate-300">Questions or ready to join? Email or DM on Instagram.</p>
+            <h2 className="text-2xl md:text-3xl font-bold">Questions?</h2>
+            <p className="mt-3 text-slate-300">
+              For scheduling and purchases, use Acuity. For general questions, email or submit the form.
+            </p>
 
             <div className="mt-6 space-y-3 text-slate-200">
               <a href="mailto:lax@603evo.com" className="flex items-center gap-3 hover:text-cyan-300">
@@ -368,7 +425,7 @@ export default function Page() {
               </a>
 
               <a
-                href="https://instagram.com/lax.603evo"
+                href={IG_URL}
                 target="_blank"
                 rel="noreferrer"
                 className="flex items-center gap-3 hover:text-cyan-300"
@@ -376,7 +433,19 @@ export default function Page() {
                 <span className="inline-grid h-8 w-8 place-items-center rounded-lg bg-white/10 border border-white/10">
                   IG
                 </span>
-                @lax.603evo
+                @603evo
+              </a>
+
+              <a
+                href={ACUITY_URL}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center gap-3 hover:text-cyan-300"
+              >
+                <span className="inline-grid h-8 w-8 place-items-center rounded-lg bg-white/10 border border-white/10">
+                  $
+                </span>
+                Book / Purchase on Acuity
               </a>
             </div>
 
@@ -385,12 +454,19 @@ export default function Page() {
             </p>
           </div>
 
-          {/* Formspree action is placeholder — replace with your real endpoint if needed */}
+          {/* FORM */}
           <form
             className="rounded-2xl glass p-6 grid gap-4"
             action="https://formspree.io/f/mvoyzqjg"
             method="POST"
           >
+            {/* Anti-spam honeypot */}
+            <input type="text" name="_gotcha" className="hidden" tabIndex={-1} autoComplete="off" />
+            {/* Email subject */}
+            <input type="hidden" name="_subject" value="New Gerry Holly Lacrosse Application" />
+            {/* Redirect after success */}
+            <input type="hidden" name="_next" value="https://gerry-holly.vercel.app/thanks" />
+
             <div>
               <label className="text-sm text-slate-300">Athlete Name</label>
               <input
@@ -458,10 +534,15 @@ export default function Page() {
           </form>
         </div>
 
-        {/* Sticky mobile CTA */}
+        {/* Sticky mobile CTA -> Acuity */}
         <div className="sm:hidden sticky-apply mx-auto max-w-6xl px-4 mt-4">
-          <a href="#contact" className="btn btn-primary w-full text-center">
-            Apply Now
+          <a
+            href={ACUITY_URL}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="btn btn-primary w-full text-center"
+          >
+            Book Sessions
           </a>
         </div>
       </section>
@@ -475,17 +556,17 @@ export default function Page() {
               lax@603evo.com
             </a>
             <span className="opacity-40">•</span>
-            <a
-              href="https://instagram.com/lax.603evo"
-              target="_blank"
-              rel="noreferrer"
-              className="hover:text-cyan-300"
-            >
+            <a href={IG_URL} target="_blank" rel="noreferrer" className="hover:text-cyan-300">
               Instagram
             </a>
             <span className="opacity-40">•</span>
-            <a href="#" className="hover:text-cyan-300">
-              www.603evo.com
+            <a
+              href={ACUITY_URL}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="hover:text-cyan-300"
+            >
+              Scheduling
             </a>
           </div>
         </div>
